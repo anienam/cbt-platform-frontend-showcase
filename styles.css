@@ -1,0 +1,503 @@
+/* =========================================
+   RESET
+========================================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Inter", sans-serif;
+        color: #17201a;
+        background: #f7faf7;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* =========================================
+   VARIABLES
+========================================= */
+
+      :root {
+        --primary: #2e7d32;
+        --primary-dark: #256628;
+        --primary-light: #edf7ed;
+
+        --text-primary: #17201a;
+        --text-secondary: #66706a;
+        --border: #e3e9e4;
+
+        --white: #ffffff;
+        --background: #f7faf7;
+
+        --container: 1180px;
+
+        --shadow-sm: 0 2px 8px rgba(25, 45, 28, 0.04);
+
+        --shadow-md: 0 12px 35px rgba(25, 45, 28, 0.08);
+
+        --radius-lg: 18px;
+      }
+
+      /* =========================================
+   CONTAINER
+========================================= */
+
+      .container {
+        width: min(100% - 40px, var(--container));
+        margin-inline: auto;
+      }
+
+      /* =========================================
+   HEADER
+========================================= */
+
+      .site-header {
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .header-inner {
+        min-height: 76px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      /* Brand */
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+
+        display: grid;
+        place-items: center;
+
+        background: var(--primary);
+        color: var(--white);
+
+        border-radius: 10px;
+
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+      }
+
+      .brand-name {
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .brand-subtitle {
+        margin-top: 3px;
+
+        color: var(--text-secondary);
+
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      /* Environment */
+
+      .environment-badge {
+        padding: 7px 12px;
+
+        border: 1px solid #d9e8da;
+        border-radius: 999px;
+
+        background: var(--primary-light);
+        color: var(--primary-dark);
+
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      /* =========================================
+   HERO
+========================================= */
+
+      .hero {
+        padding: 82px 0 64px;
+
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(46, 125, 50, 0.09),
+            transparent 34%
+          ),
+          var(--background);
+      }
+
+      .hero-content {
+        max-width: 780px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+
+        margin-bottom: 16px;
+
+        color: var(--primary);
+
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .hero h1 {
+        color: var(--text-primary);
+
+        font-size: clamp(38px, 6vw, 62px);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        font-weight: 800;
+      }
+
+      .hero p {
+        max-width: 680px;
+
+        margin: 22px auto 0;
+
+        color: var(--text-secondary);
+
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      /* =========================================
+   PORTALS
+========================================= */
+
+      .portals {
+        padding: 0 0 90px;
+
+        background: var(--background);
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .section-heading h2 {
+        color: var(--text-primary);
+
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+      }
+
+      .section-heading p {
+        margin-top: 5px;
+
+        color: var(--text-secondary);
+
+        font-size: 14px;
+      }
+
+      /* =========================================
+   GRID
+========================================= */
+
+      .portal-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 20px;
+      }
+
+      /* =========================================
+   PORTAL CARD
+========================================= */
+
+      .portal-card {
+        min-height: 300px;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 26px;
+
+        background: var(--white);
+
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+
+        box-shadow: var(--shadow-sm);
+
+        transition:
+          transform 220ms ease,
+          box-shadow 220ms ease,
+          border-color 220ms ease;
+      }
+
+      .portal-card:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(46, 125, 50, 0.28);
+
+        box-shadow: var(--shadow-md);
+      }
+
+      .portal-card:focus-visible {
+        outline: 3px solid rgba(46, 125, 50, 0.25);
+        outline-offset: 3px;
+      }
+
+      /* =========================================
+   CARD ICON
+========================================= */
+
+      .card-icon {
+        width: 54px;
+        height: 54px;
+
+        display: grid;
+        place-items: center;
+
+        margin-bottom: 25px;
+
+        border-radius: 14px;
+
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .student-icon {
+        background: #edf7ed;
+        color: #2e7d32;
+      }
+
+      .teacher-icon {
+        background: #eef5ff;
+        color: #2563a6;
+      }
+
+      .principal-icon {
+        background: #f4efff;
+        color: #7045a5;
+      }
+
+      .school-admin-icon {
+        background: #fff5e8;
+        color: #a56418;
+      }
+
+      .admin-icon {
+        background: #f1f2f4;
+        color: #4b5563;
+      }
+
+      .website-icon {
+        background: #eaf7f6;
+        color: #187a72;
+      }
+
+      /* =========================================
+   CARD CONTENT
+========================================= */
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .card-label {
+        margin-bottom: 7px;
+
+        color: var(--text-secondary);
+
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .card-content h3 {
+        color: var(--text-primary);
+
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+      }
+
+      .card-content p {
+        margin-top: 10px;
+
+        color: var(--text-secondary);
+
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-top: auto;
+        padding-top: 24px;
+
+        color: var(--primary);
+
+        font-size: 13px;
+        font-weight: 700;
+
+        transition: gap 180ms ease;
+      }
+
+      .portal-card:hover .card-link {
+        gap: 12px;
+      }
+
+      /* =========================================
+   FOOTER
+========================================= */
+
+      .site-footer {
+        background: var(--white);
+
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-inner {
+        min-height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .footer-inner p,
+      .footer-inner span {
+        color: var(--text-secondary);
+
+        font-size: 12px;
+      }
+
+      /* =========================================
+   TABLET
+========================================= */
+
+      @media (max-width: 900px) {
+        .hero {
+          padding: 65px 0 50px;
+        }
+
+        .portal-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* =========================================
+   MOBILE
+========================================= */
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(100% - 28px, var(--container));
+        }
+
+        .header-inner {
+          min-height: 68px;
+        }
+
+        .brand-mark {
+          width: 38px;
+          height: 38px;
+
+          font-size: 18px;
+        }
+
+        .brand-name {
+          font-size: 15px;
+        }
+
+        .brand-subtitle {
+          font-size: 10px;
+        }
+
+        .environment-badge {
+          padding: 6px 9px;
+
+          font-size: 9px;
+        }
+
+        .hero {
+          padding: 55px 0 45px;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+
+        .hero p {
+          margin-top: 18px;
+
+          font-size: 14px;
+          line-height: 1.7;
+        }
+
+        .portals {
+          padding-bottom: 60px;
+        }
+
+        .section-heading {
+          margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+          font-size: 21px;
+        }
+
+        .portal-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .portal-card {
+          min-height: 260px;
+          padding: 22px;
+        }
+
+        .footer-inner {
+          min-height: auto;
+
+          padding: 20px 0;
+
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
