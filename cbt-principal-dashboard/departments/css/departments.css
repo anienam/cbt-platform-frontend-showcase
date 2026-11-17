@@ -25,6 +25,13 @@
   margin-bottom: 0.35rem;
 }
 
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
 .page-title p {
   font-size: 1rem;
   color: #6fa26a;
@@ -368,4 +375,45 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px 32px 40px;
+}
+
+@media (max-width: 650px) {
+  .main-content {
+    flex: 0 0 100vw;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+  }
+
+  .page-header,
+  .page-title,
+  .page-actions,
+  .main-container,
+  .departments-grid,
+  .department-card,
+  .department-top,
+  .department-heading {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .page-title p,
+  .department-heading h3,
+  .subjects {
+    overflow-wrap: anywhere;
+  }
+
+  .main-container {
+    width: 100%;
+    padding: 0 0 32px;
+  }
+
+  .page-actions {
+    align-items: stretch;
+  }
+
+  .create-department-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

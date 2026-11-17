@@ -593,3 +593,32 @@ RESPONSIVE
   margin: 0 auto;
   padding: 0 40px 32px 40px;
 }
+
+@media (max-width: 576px) {
+  .main-content {
+    flex: 0 0 100vw;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+  }
+
+  .main-container,
+  .teachers-toolbar,
+  .search-box,
+  #teachersAccordion,
+  .teacher-section,
+  .department-body,
+  .table-wrapper {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .main-container {
+    width: calc(100vw - 40px);
+    padding: 0 0 32px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}

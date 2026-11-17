@@ -285,6 +285,12 @@ SCHOOL LOGO
 } */
 
 .logo-preview {
+  /* overview.css also styles .logo-preview as a 34x34 dashboard thumbnail;
+     undo that size here so this card fills the form */
+  width: auto;
+
+  height: auto;
+
   display: flex;
 
   align-items: center;
@@ -356,10 +362,13 @@ SCHOOL LOGO
   display: flex;
 
   align-items: center;
+
+  width: 400px;
 }
 
 .dot {
   color: #c5ccd3;
+  padding: 0 6px;
 }
 
 /*==============================================================
@@ -783,5 +792,21 @@ RESPONSIVE
     flex-direction: column;
 
     text-align: center;
+  }
+
+  /* the details line is 400px wide on desktop; let it wrap inside the card */
+  .logo-preview__details p {
+    width: auto;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Re-apply overview.css phone width; this file resets .dashboard to 95% */
+  .dashboard {
+    width: 92%;
   }
 }

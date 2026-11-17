@@ -221,7 +221,13 @@ TABLE WRAPPER
 ========================================== */
 
 .table-wrapper {
-  overflow: auto;
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-x: contain;
 
   background: #fff;
 
@@ -358,8 +364,40 @@ TABLET
 ========================================== */
 
 @media (max-width: 1024px) {
+  body:has(.sidebar.show) {
+    overflow: hidden;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+
+    transition: transform 0.35s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
   .main-content {
-    padding: 30px;
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 24px 20px;
+  }
+
+  .main-content .main-container {
+    padding-left: 0 !important;
+
+    padding-right: 0 !important;
+
+    max-width: 100%;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+
+    gap: 12px;
   }
 }
 
@@ -368,16 +406,6 @@ MOBILE
 ========================================== */
 
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-
-    transition: 0.35s ease;
-  }
-
-  .sidebar.show {
-    transform: translateX(0);
-  }
-
   .main-content {
     width: 100%;
 

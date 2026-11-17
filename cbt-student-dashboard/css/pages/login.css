@@ -69,6 +69,8 @@
 /* Inputs */
 .form-group input {
   width: 100%;
+  /* include padding in the 100% width so inputs stay inside the card */
+  box-sizing: border-box;
   padding: 12px;
   border-radius: 8px;
   border: none;
@@ -114,6 +116,11 @@
   font-size: 16px;
   color: #646464;
   text-decoration: none;
+}
+
+/* 24px-tall tap target; vertical padding on an inline link does not shift layout */
+#forgotPasswordLink {
+  padding: 3.5px 0;
 }
 
 /* Button */
@@ -275,4 +282,3 @@
     opacity: 1;
   }
 }
-

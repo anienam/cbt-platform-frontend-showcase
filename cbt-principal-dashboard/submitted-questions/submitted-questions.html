@@ -5,12 +5,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Principal Dashboard</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -30,7 +24,7 @@
             SIDEBAR
     ========================== -->
 
-      <aside class="sidebar">
+      <aside class="sidebar" id="principalSidebar">
         <div class="sidebar-top">
           <div class="logo-area">
             <img src="../assets/logo.png" alt="School Logo" />
@@ -143,6 +137,17 @@
 
         <header class="page-header">
           <div class="page-title">
+            <button
+              class="menu-toggle"
+              id="menuToggle"
+              type="button"
+              aria-label="Open navigation"
+              aria-controls="principalSidebar"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu"></i>
+            </button>
+
             <h1>Submitted Questions</h1>
 
             <p>
@@ -197,7 +202,7 @@
               <option>2025</option>
             </select>
 
-            <select>
+            <select class="class-filter" aria-label="Filter by class">
               <option>All Classes</option>
 
               <option>JSS 1A</option>

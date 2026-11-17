@@ -30,7 +30,7 @@
             SIDEBAR
     ========================== -->
 
-      <aside class="sidebar">
+      <aside class="sidebar" id="principalSidebar">
         <div class="sidebar-top">
           <div class="logo-area">
             <img src="../assets/logo.png" alt="School Logo" />
@@ -146,6 +146,17 @@ TOPBAR
 
         <header class="topbar">
           <div class="topbar-left">
+            <button
+              class="menu-toggle"
+              id="menuToggle"
+              type="button"
+              aria-label="Open navigation"
+              aria-controls="principalSidebar"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu"></i>
+            </button>
+
             <div class="topbar-title">
               <h1>Student Reports</h1>
 

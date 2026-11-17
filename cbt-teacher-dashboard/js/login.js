@@ -89,4 +89,3 @@ forgotModal.addEventListener("click", (e) => {
     forgotModal.classList.remove("active");
   }
 });
-

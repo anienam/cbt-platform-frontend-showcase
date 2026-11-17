@@ -3,269 +3,415 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta
       name="description"
-      content="Flama CBT Platform - Computer-Based Testing platform for schools and educational institutions."
+      content="A frontend case study by Anienamakan Udo, showcasing six role-specific interfaces built for the Flama Computer-Based Testing platform."
     />
+    <meta name="theme-color" content="#f7faf7" />
+    <title>Flama CBT Platform | Frontend Case Study</title>
 
-    <title>Flama CBT Platform</title>
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <!-- Portal Styles -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <!-- ================================
-       HEADER
-  ================================= -->
-
     <header class="site-header">
       <div class="container header-inner">
-        <a href="./index.html" class="brand">
-          <div class="brand-mark">F</div>
-
-          <div class="brand-text">
+        <a
+          href="./index.html"
+          class="brand"
+          aria-label="Flama CBT showcase home"
+        >
+          <span class="brand-mark" aria-hidden="true">F</span>
+          <span class="brand-text">
             <span class="brand-name">Flama</span>
             <span class="brand-subtitle">CBT Platform</span>
-          </div>
+          </span>
         </a>
 
-        <span class="environment-badge"> Frontend Demo </span>
+        <div class="header-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          Frontend project showcase
+        </div>
       </div>
     </header>
 
-    <!-- ================================
-       MAIN
-  ================================= -->
-
     <main>
-      <!-- Hero -->
       <section class="hero">
-        <div class="container hero-content">
-          <span class="eyebrow"> COMPUTER-BASED TESTING PLATFORM </span>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">A FRONTEND DEVELOPMENT PROJECT</p>
+            <h1>Building the frontend of a multi-role examination platform.</h1>
+            <p class="hero-description">
+              I worked on the frontend of Flama CBT, developing separate
+              interfaces for students, teachers, school leaders and platform
+              administrators — alongside the public-facing website.
+            </p>
 
-          <h1>Flama CBT Platform</h1>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#portals">
+                Explore the interfaces <span aria-hidden="true">↓</span>
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://github.com/anienam/cbt-platform-frontend-showcase"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View source code <span aria-hidden="true">↗</span>
+              </a>
+            </div>
 
-          <p>
-            A modern digital examination platform designed to support students,
-            teachers, school administrators, principals, and platform
-            administrators.
-          </p>
+            <div class="hero-meta">
+              <span><strong>My focus</strong> Frontend development</span>
+              <span><strong>Stack</strong> HTML, CSS, JavaScript</span>
+            </div>
+          </div>
+
+          <aside class="project-summary" aria-label="Project summary">
+            <div class="summary-top">
+              <span class="summary-label">PROJECT SNAPSHOT</span>
+              <span class="summary-mark">F</span>
+            </div>
+            <p class="summary-intro">
+              One platform, with different experiences for the people who use
+              it.
+            </p>
+            <div class="summary-stats">
+              <div>
+                <strong>6</strong>
+                <span>Frontend interfaces</span>
+              </div>
+              <div>
+                <strong>5</strong>
+                <span>User-role portals</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>Public website</span>
+              </div>
+            </div>
+            <p class="summary-footnote">
+              The showcase covers the frontend layer; backend services are not
+              integrated into this demo.
+            </p>
+          </aside>
         </div>
       </section>
 
-      <!-- Portal Cards -->
-      <section class="portals">
+      <section class="portals section" id="portals">
         <div class="container">
           <div class="section-heading">
-            <h2>Explore the Platform</h2>
-
-            <p>Select a portal to explore its frontend interface.</p>
+            <div>
+              <p class="eyebrow">TAKE A CLOSER LOOK</p>
+              <h2>Explore the interfaces</h2>
+              <p>
+                Each interface is shaped around a different set of tasks. Select
+                one to open its frontend demonstration.
+              </p>
+            </div>
+            <span class="section-count">06 INTERFACES</span>
           </div>
 
           <div class="portal-grid">
-            <!-- Student -->
-            <a
-              href="./cbt-student-dashboard/index.html"
-              class="portal-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="card-icon student-icon">
-                <span>ST</span>
-              </div>
+            <!-- Public website -->
 
-              <div class="card-content">
-                <span class="card-label">STUDENT PORTAL</span>
-
-                <h3>Student</h3>
-
-                <p>
-                  Access examinations, manage your profile, track progress, and
-                  view results.
-                </p>
-
-                <span class="card-link">
-                  Open Portal
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
-
-            <!-- Teacher -->
-            <a
-              href="./cbt-teacher-dashboard/index.html"
-              class="portal-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="card-icon teacher-icon">
-                <span>TC</span>
-              </div>
-
-              <div class="card-content">
-                <span class="card-label">TEACHER DASHBOARD</span>
-
-                <h3>Teacher</h3>
-
-                <p>
-                  Manage examinations, questions, students, assessments, and
-                  performance.
-                </p>
-
-                <span class="card-link">
-                  Open Dashboard
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
-
-            <!-- Principal -->
-            <a
-              href="./cbt-principal-dashboard/index.html"
-              class="portal-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="card-icon principal-icon">
-                <span>PR</span>
-              </div>
-
-              <div class="card-content">
-                <span class="card-label">PRINCIPAL DASHBOARD</span>
-
-                <h3>Principal</h3>
-
-                <p>
-                  Monitor school-wide examinations, performance, teachers,
-                  students, and analytics.
-                </p>
-
-                <span class="card-link">
-                  Open Dashboard
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
-
-            <!-- School Admin -->
-            <a
-              href="./cbt-school-admin-dashboard/index.html"
-              class="portal-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="card-icon school-admin-icon">
-                <span>SA</span>
-              </div>
-
-              <div class="card-content">
-                <span class="card-label">SCHOOL ADMIN</span>
-
-                <h3>School Admin</h3>
-
-                <p>
-                  Manage school information, staff, users, subscriptions, and
-                  configuration.
-                </p>
-
-                <span class="card-link">
-                  Open Dashboard
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
-
-            <!-- Platform Admin -->
-            <a
-              href="./cbt-platform-admin/index.html"
-              class="portal-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="card-icon admin-icon">
-                <span>AD</span>
-              </div>
-
-              <div class="card-content">
-                <span class="card-label">PLATFORM ADMIN</span>
-
-                <h3>Platform Admin</h3>
-
-                <p>
-                  Manage schools, users, subscriptions, analytics, and platform
-                  operations.
-                </p>
-
-                <span class="card-link">
-                  Open Dashboard
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
-
-            <!-- Public Website -->
             <a
               href="./cbt-public-website/index.html"
               class="portal-card"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div class="card-icon website-icon">
-                <span>WB</span>
+              <div class="card-top">
+                <span class="card-icon website-icon">WB</span>
+                <span class="card-number">01</span>
               </div>
+              <span class="card-label">PUBLIC-FACING WEBSITE</span>
+              <h3>Website</h3>
+              <p>
+                Introduce the platform, explain its features and guide schools
+                towards onboarding.
+              </p>
+              <span class="card-link"
+                >Visit public website <span aria-hidden="true">↗</span></span
+              >
+            </a>
 
-              <div class="card-content">
-                <span class="card-label">PUBLIC WEBSITE</span>
+            <!-- School Admin Dashboard -->
 
-                <h3>Website</h3>
-
-                <p>
-                  Explore the public-facing website, platform features, and
-                  school onboarding.
-                </p>
-
-                <span class="card-link">
-                  Visit Website
-                  <span aria-hidden="true">→</span>
-                </span>
+            <a
+              href="./cbt-school-admin-dashboard/index.html"
+              class="portal-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="card-top">
+                <span class="card-icon school-admin-icon">SA</span>
+                <span class="card-number">02</span>
               </div>
+              <span class="card-label">SCHOOL ADMINISTRATION</span>
+              <h3>School Admin</h3>
+              <p>
+                Manage school information, staff, users, subscriptions and
+                school-level configuration.
+              </p>
+              <span class="card-link"
+                >Open school dashboard <span aria-hidden="true">↗</span></span
+              >
+            </a>
+
+            <!-- Principal Dashboard -->
+
+            <a
+              href="./cbt-principal-dashboard/overview.html"
+              class="portal-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="card-top">
+                <span class="card-icon principal-icon">PR</span>
+                <span class="card-number">03</span>
+              </div>
+              <span class="card-label">PRINCIPAL DASHBOARD</span>
+              <h3>Principal</h3>
+              <p>
+                Review school-wide examination activity, academic performance,
+                teachers, students and reports.
+              </p>
+              <span class="card-link"
+                >Open principal dashboard
+                <span aria-hidden="true">↗</span></span
+              >
+            </a>
+
+            <!-- Teacher Dashboard -->
+
+            <a
+              href="./cbt-teacher-dashboard/overview.html"
+              class="portal-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="card-top">
+                <span class="card-icon teacher-icon">TC</span>
+                <span class="card-number">04</span>
+              </div>
+              <span class="card-label">TEACHER DASHBOARD</span>
+              <h3>Teacher</h3>
+              <p>
+                Work with examinations, questions, student information and
+                assessment activities.
+              </p>
+              <span class="card-link"
+                >Open teacher dashboard <span aria-hidden="true">↗</span></span
+              >
+            </a>
+
+            <!-- Student Dashboard -->
+
+            <a
+              href="./cbt-student-dashboard/pages/onboarding.html"
+              class="portal-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="card-top">
+                <span class="card-icon student-icon">ST</span>
+                <span class="card-number">05</span>
+              </div>
+              <span class="card-label">STUDENT PORTAL</span>
+              <h3>Student</h3>
+              <p>
+                View available examinations, manage a profile, move through
+                questions, submit answers and check results.
+              </p>
+              <span class="card-link"
+                >Open student portal <span aria-hidden="true">↗</span></span
+              >
+            </a>
+
+            <!-- Platform Admin Dashboard -->
+
+            <a
+              href="./cbt-platform-admin/index.html"
+              class="portal-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="card-top">
+                <span class="card-icon admin-icon">AD</span>
+                <span class="card-number">06</span>
+              </div>
+              <span class="card-label">PLATFORM ADMINISTRATION</span>
+              <h3>Platform Admin</h3>
+              <p>
+                Manage schools, users, subscriptions, analytics and
+                platform-wide operations.
+              </p>
+              <span class="card-link"
+                >Open platform dashboard <span aria-hidden="true">↗</span></span
+              >
             </a>
           </div>
         </div>
       </section>
-    </main>
 
-    <!-- ================================
-       FOOTER
-  ================================= -->
+      <section class="work-section section">
+        <div class="container work-layout">
+          <div class="section-intro">
+            <p class="eyebrow">MY CONTRIBUTION</p>
+            <h2>More than a set of screens.</h2>
+            <p>
+              The work involved building interfaces for people with different
+              responsibilities, while keeping the experience clear and
+              consistent across the platform.
+            </p>
+          </div>
+
+          <div class="contribution-list">
+            <article class="contribution-item">
+              <span class="contribution-index">01</span>
+              <div>
+                <h3>Interface development</h3>
+                <p>
+                  Built page layouts, navigation, forms, tables, dashboard
+                  sections and reusable interface patterns.
+                </p>
+              </div>
+            </article>
+            <article class="contribution-item">
+              <span class="contribution-index">02</span>
+              <div>
+                <h3>Interactive examination flows</h3>
+                <p>
+                  Implemented frontend interactions including timers, question
+                  navigation, answer selection, auto-save behaviour and
+                  submission feedback.
+                </p>
+              </div>
+            </article>
+            <article class="contribution-item">
+              <span class="contribution-index">03</span>
+              <div>
+                <h3>Role-specific dashboards</h3>
+                <p>
+                  Structured separate experiences around the tasks of students,
+                  teachers, principals and administrators.
+                </p>
+              </div>
+            </article>
+            <article class="contribution-item">
+              <span class="contribution-index">04</span>
+              <div>
+                <h3>Responsive implementation</h3>
+                <p>
+                  Adapted layouts and components for desktop, tablet and smaller
+                  screens, with attention to usability and navigation.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="build-section section">
+        <div class="container build-layout">
+          <div>
+            <p class="eyebrow">HOW IT WAS BUILT</p>
+            <h2>Working with the fundamentals.</h2>
+            <p class="build-description">
+              The showcase frontend uses standard web technologies. HTML
+              provides the structure, CSS handles layout and responsive
+              behaviour, and JavaScript powers interface interactions.
+            </p>
+          </div>
+          <div class="tech-list" aria-label="Technologies used">
+            <div class="tech-item">
+              <span class="tech-symbol">5</span>
+              <div>
+                <strong>HTML5</strong><span>Semantic page structure</span>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-symbol">#</span>
+              <div>
+                <strong>CSS3</strong><span>Layouts and responsive styling</span>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-symbol">JS</span>
+              <div>
+                <strong>JavaScript</strong
+                ><span>Interactive interface behaviour</span>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-symbol">Git</span>
+              <div>
+                <strong>Git & GitHub</strong
+                ><span>Version control and project organization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-note">
+        <div class="container note-inner">
+          <div>
+            <p class="eyebrow">PROJECT SCOPE</p>
+            <h2>A frontend showcase</h2>
+          </div>
+          <p>
+            This repository demonstrates the frontend interfaces and
+            interactions. Authentication, database connectivity and backend
+            services are not integrated into this demonstration.
+          </p>
+        </div>
+      </section>
+
+      <section class="next-step section">
+        <div class="container next-step-inner">
+          <div>
+            <p class="eyebrow">WANT TO EXPLORE THE CODE?</p>
+            <h2>See how the project is organized.</h2>
+            <p>
+              Browse the repository for the individual portal folders and their
+              frontend implementations.
+            </p>
+          </div>
+          <a
+            class="button button-primary"
+            href="https://github.com/anienam/cbt-platform-frontend-showcase"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View GitHub repository <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>
-          Â© <span id="current-year"></span> Flama-Tech Global Service. All
+          © <span id="current-year"></span> Flama-Tech Global Service. All
           rights reserved.
         </p>
-
-        <span> Flama CBT Platform </span>
+        <span>Frontend showcase by Anienamakan Udo</span>
       </div>
     </footer>
 
-    <!-- ================================
-       JAVASCRIPT
-  ================================= -->
-
     <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
+      const yearElement = document.getElementById("current-year");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
     </script>
   </body>
 </html>

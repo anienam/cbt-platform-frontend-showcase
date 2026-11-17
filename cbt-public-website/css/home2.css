@@ -35,6 +35,7 @@ TESTIMONIALS
 .quote svg {
   width: 30px;
   height: 30px;
+  color: #04530b;
 }
 
 .quote.green svg {
@@ -219,7 +220,7 @@ TEAM
   }
 
   .stat-item h3 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .team-card {
@@ -298,7 +299,7 @@ FAQ CTA
 
 @media (max-width: 768px) {
   .faq-cta {
-    padding: 80px 0;
+    padding: 40px 0;
   }
 
   .faq-content h2 {
@@ -311,6 +312,7 @@ FAQ CTA
 
   .faq-image img {
     max-width: 300px;
+    display: none;
   }
 }
 
@@ -387,7 +389,7 @@ CALL TO ACTION
 .cta-image img {
   max-width: 420px;
   width: 100%;
-  animation: floatImage 5s ease-in-out infinite;
+  /* animation: floatImage 5s ease-in-out infinite; */
 }
 
 /*========================*/
@@ -432,6 +434,7 @@ CALL TO ACTION
 
   .cta-image img {
     max-width: 280px;
+    display: none;
   }
 }
 
@@ -470,8 +473,8 @@ FOOTER
 }
 
 .footer-column h4 {
-  margin-bottom: 24px;
-  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
   color: #fff;
 }
 
@@ -569,7 +572,7 @@ FOOTER
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: 20px;
   }
 
   .footer-bottom {
@@ -579,5 +582,112 @@ FOOTER
 
   .footer-policy {
     justify-content: center;
+  }
+}
+
+/* additional styles for mobile */
+
+/* ================= TEAM SECTION: RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .team {
+    background: #fff;
+    padding: 40px 0 48px;
+  }
+
+  .team .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .team-header h2 {
+    color: #3b2f8f;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 16px 0 20px;
+  }
+
+  .team-header p {
+    color: #292929;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .team-card {
+    width: 175px;
+    min-width: 0;
+    padding: 24px 16px;
+    background: #f4f7f6;
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .team-card img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+  }
+
+  .team-card h3 {
+    color: #252525;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0 0 6px;
+  }
+
+  .team-card p {
+    color: #858585;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+/* Two columns on tablets and desktop */
+@media (min-width: 769px) {
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  .team-card {
+    text-align: center;
+    border-radius: 40px;
+    padding: 56px 24px;
+  }
+
+  .team-card img {
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 26px;
+  }
+
+  .team-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 22px;
+  }
+
+  .team-card p {
+    font-size: 1.5rem;
   }
 }

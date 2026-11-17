@@ -32,7 +32,17 @@
           </div>
         </a>
 
-        <nav class="top-navigation">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="schoolNavigation"
+          aria-expanded="false"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+
+        <nav class="top-navigation" id="schoolNavigation">
           <a href="./index.html" class="nav-link active"> Overview </a>
 
           <a href="./account-settings.html" class="nav-link">
@@ -56,7 +66,7 @@
           <span>Expires Aug 20, 2026</span>
         </div>
 
-        <button class="account-dropdown">
+        <button class="account-dropdown" type="button" aria-expanded="false">
           <div class="account-avatar"></div>
 
           <div class="account-info">
@@ -67,6 +77,13 @@
 
           <i data-lucide="chevron-down"></i>
         </button>
+
+        <div class="account-menu" role="menu">
+          <button class="account-menu__logout" type="button" role="menuitem">
+            <i data-lucide="log-out"></i>
+            Logout
+          </button>
+        </div>
       </div>
     </header>
 
@@ -84,7 +101,7 @@
           <i data-lucide="arrow-left"></i>
         </a>
 
-        <a href="overview.html" class="back-link"> Back to Account Settings </a>
+        <a href="./account-settings.html" class="back-link"> Back to Account Settings </a>
       </section>
 
       <!-- ===================================== -->
@@ -284,5 +301,6 @@
 
     <script src="./js/overview.js"></script>
     <script src="./js/edit-school-details.js"></script>
+    <script src="./js/mobile-navigation.js"></script>
   </body>
 </html>

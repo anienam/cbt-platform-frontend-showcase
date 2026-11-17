@@ -30,7 +30,7 @@
             SIDEBAR
     ========================== -->
 
-      <aside class="sidebar">
+      <aside class="sidebar" id="principalSidebar">
         <div class="sidebar-top">
           <div class="logo-area">
             <img src="../assets/logo.png" alt="School Logo" />
@@ -146,9 +146,22 @@
 
         <header class="page-header">
           <div class="page-title">
-            <h1>Departments</h1>
+            <button
+              class="menu-toggle"
+              id="menuToggle"
+              type="button"
+              aria-label="Open navigation"
+              aria-controls="principalSidebar"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu"></i>
+            </button>
 
-            <p>Manage school departments and teacher assignments.</p>
+            <div>
+              <h1>Departments</h1>
+
+              <p>Manage school departments and teacher assignments.</p>
+            </div>
           </div>
 
           <div class="page-actions">

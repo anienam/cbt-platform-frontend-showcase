@@ -27,7 +27,7 @@
          SIDEBAR
     ========================================== -->
 
-      <aside class="platform-sidebar">
+      <aside class="platform-sidebar" id="platformSidebar">
         <div class="sidebar-brand">
           <div class="brand-logo">C</div>
 
@@ -87,6 +87,13 @@
         </div>
       </aside>
 
+      <button
+        class="sidebar-overlay"
+        type="button"
+        aria-label="Close navigation"
+        tabindex="-1"
+      ></button>
+
       <!-- ==========================================
          MAIN AREA
     ========================================== -->
@@ -97,6 +104,16 @@
         ====================================== -->
 
         <header class="platform-topbar">
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            aria-label="Open navigation"
+            aria-controls="platformSidebar"
+            aria-expanded="false"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+
           <div class="global-search">
             <i data-lucide="search"></i>
 
@@ -448,6 +465,7 @@
     </div>
 
     <script src="./js/subscriptions.js"></script>
+    <script src="./js/mobile-navigation.js"></script>
 
     <script>
       lucide.createIcons();

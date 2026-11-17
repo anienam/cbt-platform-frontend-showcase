@@ -182,6 +182,24 @@ NAVIGATION
   gap: 12px;
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e2e8e2;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.nav-toggle svg {
+  width: 21px;
+  height: 21px;
+}
+
 .nav-link {
   text-decoration: none;
 
@@ -217,6 +235,8 @@ RIGHT HEADER
 ==============================================================*/
 
 .topbar__right {
+  position: relative;
+
   display: flex;
 
   align-items: center;
@@ -264,6 +284,65 @@ RIGHT HEADER
   border: none;
 
   cursor: pointer;
+}
+
+.account-dropdown svg {
+  transition: transform 0.2s ease;
+}
+
+.account-dropdown.active svg {
+  transform: rotate(180deg);
+}
+
+.account-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 20;
+  min-width: 170px;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.account-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.account-menu__logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #b42318;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-menu__logout:hover {
+  background: #fef3f2;
+}
+
+.account-menu__logout svg {
+  width: 16px;
+  height: 16px;
 }
 
 .account-avatar {
@@ -815,7 +894,11 @@ PORTAL URL CARD
 
   text-decoration: none;
 
-  margin-left: 10px;
+  /* 24x24 tap target around the 15px icon; negative margins keep the
+     original footprint (15px icon, 10px left gap) */
+  padding: 4.5px;
+
+  margin: -4.5px -4.5px -4.5px 5.5px;
 }
 
 .portal-link__url svg {
@@ -1103,12 +1186,25 @@ RESPONSIVE
 ==============================================================*/
 
 @media (max-width: 1200px) {
+  /* Tighter single-row topbar just above the 1100px stacking breakpoint */
+  .topbar {
+    padding: 0 24px;
+  }
+
+  .topbar__left {
+    gap: 24px;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .overview-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .overview-grid > * {
+    min-width: 0;
   }
 
   .quick-actions__grid {
@@ -1116,7 +1212,7 @@ RESPONSIVE
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .topbar {
     height: auto;
 
@@ -1175,8 +1271,68 @@ RESPONSIVE
     grid-template-columns: 1fr;
   }
 
+  .topbar__left {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .school-brand {
+    min-width: 0;
+  }
+
+  .school-brand__content {
+    min-width: 0;
+  }
+
+  .school-brand__content h2,
+  .school-brand__content span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .top-navigation {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 8px;
+    border: 1px solid #e6ece6;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(24, 50, 26, 0.08);
+  }
+
+  .top-navigation.is-open {
+    display: flex;
+  }
+
+  .top-navigation .nav-link {
+    width: 100%;
+  }
+
+  .school-details > .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
   .portal-link {
-    grid-template-columns: 1fr;
+    min-width: 0;
+
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portal-link__url {
+    min-width: 0;
   }
 
   .portal-link .btn {
@@ -1201,5 +1357,17 @@ RESPONSIVE
 
   .quick-card {
     min-height: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar__right {
+    gap: 8px;
+  }
+
+  .subscription-pill {
+    gap: 5px;
+    padding: 8px 10px;
+    font-size: 11px;
   }
 }

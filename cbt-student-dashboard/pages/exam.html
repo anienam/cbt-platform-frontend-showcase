@@ -21,27 +21,31 @@
       </div>
 
       <div class="exam-title">
-        <h2>3rd Term Examination</h2>
-        <p class="sub">Answer all questions</p>
+        <h2 id="examTitle">Loading...</h2>
+        <p class="sub" id="examInstruction">Loading...</p>
       </div>
 
       <div class="user-info">
         <img src="../assets/icons/avatar.png" alt="user" />
         <div>
-          <h4>Abiodun Adegbola</h4>
-          <p>Jss 3B</p>
+          <h4 id="studentName">Loading...</h4>
+          <p id="studentClass">Loading...</p>
         </div>
       </div>
     </header>
 
     <div class="exam-layout">
-      <!-- LEFT PANEL -->
-      <aside class="left-panel">
-        <h3>Subject: <span>Biology</span></h3>
+      <!-- DOM order = phone reading/focus order: timer, question, grid, submit.
+           Desktop (>900px) places them in three columns with CSS grid areas. -->
 
-        <p>Total Questions</p>
+      <!-- TIMER (right column, top) -->
+      <aside class="timer-panel">
+        <div class="timer" id="timer">loading...</div>
 
-        <div class="question-grid" id="questionGrid"></div>
+        <p class="timer-warning">
+          ⚠️ Failure to submit before time expires will result in automatic
+          submission of your current answers.
+        </p>
       </aside>
 
       <!-- CENTER -->
@@ -69,15 +73,18 @@
         </p>
       </main>
 
-      <!-- RIGHT PANEL -->
-      <aside class="right-panel">
-        <div class="timer" id="timer">45:00</div>
+      <!-- QUESTION GRID (left column) -->
+      <aside class="left-panel">
+        <h3>Subject: <span id="subjectName">Loading...</span></h3>
 
-        <p class="timer-warning">
-          ⚠️ Failure to submit before time expires will result in automatic
-          submission of your current answers.
-        </p>
 
+        <p>Total Questions</p>
+
+        <div class="question-grid" id="questionGrid"></div>
+      </aside>
+
+      <!-- SUBMIT (right column, below the timer) -->
+      <aside class="submit-panel">
         <div class="submit-box">
           <h3>⚠️ Warning:</h3>
           <p>
@@ -95,7 +102,7 @@
         <h2>🚨 Are You Sure?</h2>
         <p>You are about to end and submit your exam.</p>
 
-        <p><strong>📚 Subject:</strong> Biology</p>
+        <p><strong>📚 Subject:</strong> <span id="modalSubject"></span></p>
         <p><strong>Answered:</strong> <span id="answeredCount"></span></p>
         <p>
           <strong>⚠️ Unanswered:</strong> <span id="unansweredCount"></span>

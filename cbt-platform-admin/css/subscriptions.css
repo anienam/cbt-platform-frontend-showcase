@@ -123,7 +123,7 @@
    PLAN PRICING
 ========================================== */
 
-.pricing-section {
+/* .pricing-section {
   margin-bottom: 25px;
 }
 
@@ -164,13 +164,13 @@
   color: #777777;
 
   font-size: 13px;
-}
+} */
 
 /* ==========================================
    PRICING AMOUNT
 ========================================== */
 
-.pricing-amount {
+/* .pricing-amount {
   display: flex;
   align-items: baseline;
   gap: 39px;
@@ -188,26 +188,26 @@
 .pricing-amount span {
   color: #686868;
   font-size: 13px;
-}
+} */
 
 /* ==========================================
    PRICING DIVIDER
 ========================================== */
 
-.pricing-divider {
+/* .pricing-divider {
   width: 100%;
   height: 1px;
 
   margin: 13px 0 10px;
 
   background: #dcebdc;
-}
+} */
 
 /* ==========================================
    FEATURES
 ========================================== */
 
-.pricing-features {
+/* .pricing-features {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -225,13 +225,13 @@
 
 .pricing-features li {
   white-space: nowrap;
-}
+} */
 
 /* ==========================================
    EDIT PRICING
 ========================================== */
 
-.pricing-edit-btn {
+/* .pricing-edit-btn {
   width: 100%;
   height: 35px;
 
@@ -256,7 +256,7 @@
 .pricing-edit-btn:hover {
   background: #2e7d32;
   color: #ffffff;
-}
+} */
 
 /* ==========================================
    TRANSACTIONS CARD
@@ -476,5 +476,494 @@
 
   .transactions-table {
     min-width: 900px;
+  }
+}
+
+/* card new layout */
+
+/* ==========================================
+   PLAN PRICING
+========================================== */
+
+.pricing-section {
+  margin-bottom: 25px;
+}
+
+.pricing-section > .billing-section-label {
+  margin-bottom: 14px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+/* Pricing Card */
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+  padding: 20px 20px 11px;
+
+  border: 1px solid #f0f1f0;
+  border-radius: 13px;
+
+  background: #ffffff;
+  color: #252525;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
+}
+
+/* Plan Name */
+.pricing-card h3 {
+  margin: 0;
+
+  color: #252525;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* Student Limit */
+.pricing-description {
+  margin: 3px 0 0;
+
+  color: #707070;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Pricing Amount */
+.pricing-card .price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  margin-top: 9px;
+
+  color: #287d32;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.pricing-card .price span {
+  margin-left: auto;
+
+  color: #777777;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/* Divider */
+.pricing-card hr {
+  width: 100%;
+  height: 1px;
+
+  margin: 11px 0 10px;
+
+  border: 0;
+  background: #e9f0e9;
+}
+
+/* Features */
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  list-style: none;
+
+  color: #606060;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  white-space: normal;
+}
+
+.pricing-features li i {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+
+  color: #555555;
+}
+
+/* Edit Pricing Button */
+.pricing-edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  width: 100%;
+  min-height: 29px;
+  height: 29px;
+
+  margin-top: auto;
+
+  border: 1px solid #2e7d32;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #287d32;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pricing-edit-btn::before {
+  content: "✏️";
+  font-size: 9px;
+}
+
+.pricing-edit-btn:hover {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+/* Remove Featured Card Styling */
+.pricing-card.featured {
+  border-color: #f0f1f0;
+  background: #ffffff;
+  color: #252525;
+  transform: none;
+}
+
+.pricing-card.featured h3 {
+  color: #252525;
+}
+
+/* Most Popular Badge */
+.pricing-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+  background: #e7f3e8;
+  color: #287d32;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   RESPONSIVE PRICING
+========================================== */
+
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .pricing-card {
+    padding: 18px 15px 11px;
+  }
+
+  .pricing-card .price {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .pricing-card .price {
+    font-size: 20px;
+  }
+
+  .pricing-features {
+    font-size: 12px;
+  }
+
+  .pricing-edit-btn {
+    min-height: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   PRICING CARDS — REFERENCE DESIGN OVERRIDES
+   Place at the VERY END of subscriptions.css
+========================================== */
+
+.pricing-section .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 15px;
+}
+
+.pricing-section .pricing-grid > .pricing-card,
+.pricing-section .pricing-grid > .pricing-card.featured {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  padding: 18px 20px 11px;
+
+  background: #ffffff !important;
+  color: #252525 !important;
+  border: 1px solid #f0f1f0;
+  border-radius: 13px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
+  transform: none !important;
+}
+
+.pricing-section .pricing-card h3,
+.pricing-section .pricing-card.featured h3 {
+  margin: 0;
+  color: #252525 !important;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.pricing-section .pricing-card .price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  margin-top: 8px;
+  color: #287d32 !important;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.pricing-section .pricing-card .price span {
+  margin-left: auto;
+  color: #777777 !important;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.pricing-section .pricing-card .pricing-description {
+  margin: 3px 0 0;
+  color: #707070 !important;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.pricing-section .pricing-card hr {
+  width: 100%;
+  height: 1px;
+  margin: 11px 0 10px;
+  border: 0;
+  background: #e9f0e9;
+}
+
+.pricing-section .pricing-card .pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  color: #606060 !important;
+  font-size: 10px;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.pricing-section .pricing-card .pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #606060 !important;
+  white-space: normal;
+}
+
+.pricing-section .pricing-card .pricing-features li i {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  color: #555555 !important;
+}
+
+.pricing-section .pricing-card .pricing-edit-btn,
+.pricing-section .pricing-card .btn.pricing-edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  width: 100%;
+  min-height: 29px;
+  height: 29px;
+  margin-top: auto;
+
+  padding: 0 10px;
+
+  background: #ffffff !important;
+  color: #287d32 !important;
+  border: 1px solid #2e7d32 !important;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  box-shadow: none;
+
+  cursor: pointer;
+}
+
+.pricing-section .pricing-card .pricing-edit-btn:hover,
+.pricing-section .pricing-card .btn.pricing-edit-btn:hover {
+  background: #2e7d32 !important;
+  color: #ffffff !important;
+}
+
+/* Reference screenshot has no Most Popular badge */
+.pricing-section .pricing-badge {
+  display: none !important;
+}
+
+/* Desktop and tablet */
+@media (max-width: 1200px) {
+  .pricing-section .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pricing-section .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .pricing-section .pricing-grid > .pricing-card,
+  .pricing-section .pricing-grid > .pricing-card.featured {
+    height: auto;
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .pricing-section .pricing-card .price {
+    font-size: 20px;
+  }
+
+  .pricing-section .pricing-card .pricing-features {
+    font-size: 12px;
+  }
+
+  .pricing-section .pricing-card .pricing-edit-btn {
+    min-height: 35px;
+    height: 35px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+}
+
+/* Final refinements to match the reference screenshot */
+
+.pricing-section .pricing-grid {
+  gap: 15px;
+}
+
+.pricing-section .pricing-grid > .pricing-card,
+.pricing-section .pricing-grid > .pricing-card.featured {
+  padding: 18px 20px 11px;
+}
+
+.pricing-section .pricing-card h3 {
+  font-size: 15px;
+}
+
+.pricing-section .pricing-card .price {
+  justify-content: flex-start;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.pricing-section .pricing-card .price span {
+  margin-left: 0;
+  font-size: 10px;
+}
+
+.pricing-section .pricing-card .pricing-description {
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+.pricing-section .pricing-card hr {
+  margin: 11px 0 10px;
+}
+
+.pricing-section .pricing-card .pricing-features {
+  gap: 4px;
+  font-size: 10px;
+}
+
+.pricing-section .pricing-card .pricing-edit-btn {
+  min-height: 29px;
+  height: 29px;
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .pricing-section .pricing-card .price {
+    font-size: 20px;
+  }
+
+  .pricing-section .pricing-card .pricing-features {
+    font-size: 12px;
+  }
+
+  .pricing-section .pricing-card .pricing-edit-btn {
+    min-height: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Match the Overview phone gutter: .dashboard-content already pads 15px */
+  .billing-page {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

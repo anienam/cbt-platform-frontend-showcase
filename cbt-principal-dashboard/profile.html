@@ -30,7 +30,7 @@
             SIDEBAR
     ========================== -->
 
-      <aside class="sidebar">
+      <aside class="sidebar" id="principalSidebar">
         <div class="sidebar-top">
           <div class="logo-area">
             <img src="assets/logo.png" alt="School Logo" />
@@ -146,12 +146,25 @@
 
         <header class="page-header">
           <div class="page-title">
-            <h1>Principal Profile</h1>
+            <button
+              class="menu-toggle"
+              id="menuToggle"
+              type="button"
+              aria-label="Open navigation"
+              aria-controls="principalSidebar"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu"></i>
+            </button>
 
-            <p>
-              Your personal information and a snapshot of the school you
-              oversee.
-            </p>
+            <div>
+              <h1>Principal Profile</h1>
+
+              <p>
+                Your personal information and a snapshot of the school you
+                oversee.
+              </p>
+            </div>
           </div>
 
           <div class="principal-profile">

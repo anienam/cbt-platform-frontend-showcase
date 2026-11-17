@@ -5,18 +5,26 @@
 }
 
 body {
-  background: #f5f5f5;
+  background: #ffffff;
   font-family: Arial, sans-serif;
 }
 
+/* DOM order is timer, question, grid, submit (the phone reading/focus order).
+   Desktop places them in the original three columns with grid areas. */
 .exam-layout {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 250px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "grid main timer"
+    "grid main submit";
+  column-gap: 20px;
   padding: 20px;
 }
 
 /* LEFT PANEL */
 .left-panel {
+  grid-area: grid;
   width: 220px;
 }
 
@@ -45,6 +53,7 @@ body {
 
 /* MAIN */
 .exam-main {
+  grid-area: main;
   flex: 1;
   text-align: center;
 }
@@ -54,7 +63,13 @@ body {
 }
 
 .question-box {
-  margin: 40px 0;
+  margin: 48px 0;
+  text-align: left;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  /* box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+  border: 1px solid #efefef; */
 }
 
 .question-box h3#questionNumber {
@@ -70,11 +85,19 @@ body {
   color: #222;
 }
 
+/* Each answer label gets 4px vertical padding (>=24px tap target); the gap and
+   margins shrink by the same amount so the visible spacing is unchanged. */
 .options {
-  margin-top: 20px;
+  margin-top: 16px;
+  margin-bottom: -4px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
+}
+
+.options .option {
+  padding: 4px 0;
+  cursor: pointer;
 }
 
 .options button {
@@ -83,6 +106,8 @@ body {
   font-weight: 400;
   cursor: pointer;
   background: white;
+  text-align: left;
+  border-radius: 8px;
 }
 
 .options button.selected {
@@ -105,8 +130,14 @@ body {
   border-radius: 6px;
 }
 
-/* RIGHT */
-.right-panel {
+/* RIGHT COLUMN: timer on top, submit below */
+.timer-panel {
+  grid-area: timer;
+  width: 250px;
+}
+
+.submit-panel {
+  grid-area: submit;
   width: 250px;
 }
 
@@ -123,6 +154,7 @@ body {
   background: #e8f5e9;
   padding: 15px;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
 }
 
 .submit-box button {
@@ -137,12 +169,16 @@ body {
 
 /* MOBILE */
 @media (max-width: 900px) {
+  /* Single column in DOM order: timer, question, grid, submit */
   .exam-layout {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
   .left-panel,
-  .right-panel {
+  .timer-panel,
+  .submit-panel {
     width: 100%;
   }
 }
@@ -371,4 +407,45 @@ body {
 
 .success-box button:hover {
   background: #27632a;
+}
+
+.left-panel span {
+  color: #4d4d4d;
+}
+
+#submitBtn:hover,
+#prevBtn:hover,
+#nextBtn:hover {
+  background: #59d25f;
+}
+
+.brand,
+.user-info {
+  margin-left: 15px;
+}
+
+/* Phone topbar: brand + student on the first row, exam title full width below */
+@media (max-width: 600px) {
+  .topbar {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  /* Share the first row; long text wraps inside each half */
+  .brand,
+  .user-info {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .user-info {
+    justify-content: flex-end;
+    margin-right: 15px;
+  }
+
+  .exam-title {
+    order: 1;
+    flex-basis: 100%;
+    margin: 8px 15px 0;
+  }
 }

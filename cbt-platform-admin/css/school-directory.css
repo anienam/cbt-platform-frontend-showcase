@@ -4,7 +4,8 @@
 
 .schools-page {
   width: 100%;
-  max-width: 1380px;
+  /* max-width: 1380px; */
+  /* min-width: 1200px; */
   margin: 0 auto;
   padding: 38px 40px 50px;
 }
@@ -87,6 +88,7 @@
 
 .schools-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-bottom: 26px;
@@ -97,7 +99,7 @@
 ========================================== */
 
 .schools-search {
-  width: 405px;
+  width: 400px;
   height: 50px;
 
   display: flex;
@@ -634,5 +636,13 @@
 @media (max-width: 480px) {
   .school-filters {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Match the Overview phone gutter: .dashboard-content already pads 15px */
+  .schools-page {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

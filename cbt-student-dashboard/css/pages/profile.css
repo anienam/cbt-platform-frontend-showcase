@@ -263,9 +263,9 @@
   }
 }
 
-/* .subjects-grid li:hover {
+.subjects-grid li:hover {
   color: #2e7d32;
-} */
+}
 
 @media (max-width: 900px) {
   .profile-card {

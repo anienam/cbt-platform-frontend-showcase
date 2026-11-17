@@ -125,7 +125,7 @@
   position: relative;
 
   flex: 0 1 392px;
-  min-width: 260px;
+  max-width: 400px;
 }
 
 .ticket-search i,
@@ -474,7 +474,7 @@
 
   .ticket-search {
     flex: none;
-    width: 100%;
+    width: 60%;
   }
 
   .ticket-filters {
@@ -491,5 +491,18 @@
 
   .tickets-table {
     min-width: 1050px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Match the Overview phone gutter: .dashboard-content already pads 15px */
+  .support-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ticket-search {
+    width: 100%;
+    max-width: none;
   }
 }
